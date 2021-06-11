@@ -31,7 +31,7 @@ jobs:
         run: STAGE=dev npm run build
 
       - name: copy files to s3
-        run: aws s3 cp ./build  s3://part-tape-actions-to-s3
+        run: aws s3 sync .  s3://part-tape-actions-to-s3
 
       - name: Invalidate cache
         run: |
